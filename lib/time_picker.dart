@@ -11,7 +11,7 @@ class CustomHourPicker extends StatefulWidget {
   final TextStyle? positiveButtonStyle;
   final TextStyle? negativeButtonStyle;
   final TextStyle? titleStyle;
-  final Function(BuildContext context, TimeOfDay time)? onPositivePressed;
+  final Function(BuildContext context, DateTime time)? onPositivePressed;
   final Function(BuildContext context)? onNegativePressed;
 
   const CustomHourPicker({
@@ -36,7 +36,7 @@ class CustomHourPicker extends StatefulWidget {
 class _CustomHourPickerState extends State<CustomHourPicker> {
   var hourValue = 12;
   var minValue = 30;
-  TimeOfDay time = const TimeOfDay(hour: 0, minute: 0);
+  DateTime time = DateTime(0);
   DateTime? date;
   DateTime? initDate;
 
@@ -119,7 +119,7 @@ class _CustomHourPickerState extends State<CustomHourPicker> {
   }
 
   Widget buildButtons() {
-    time = TimeOfDay(hour: hourValue, minute: minValue);
+    time = DateTime(1, 1, 1, hourValue, minValue);
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.end,
