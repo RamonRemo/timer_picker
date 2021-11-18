@@ -36,15 +36,7 @@ class _HomeState extends State<Home> {
           children: [
             buildTextField(),
             buildButton(context),
-            CustomHourPicker(
-              negativeButtonText: "blablab",
-              onPositivePressed: (context, time) {
-                print('ok');
-              },
-              onNegativePressed: (context) {
-                print("cancel");
-              },
-            )
+            buildCustomTimer(context)
           ],
         ),
       ),
@@ -74,6 +66,18 @@ class _HomeState extends State<Home> {
     );
   }
 
+  buildCustomTimer(BuildContext context) {
+    return CustomHourPicker(
+      onPositivePressed: (context, time) {
+        textFieldController.text = time.toString();
+        print(time);
+      },
+      onNegativePressed: (context) {
+        print('cancel');
+      },
+    );
+  }
+
   Padding buildButton(BuildContext context) {
     Function(TimeOfDay time) onAccept = (time) {
       textFieldController.text = time.toString();
@@ -88,15 +92,7 @@ class _HomeState extends State<Home> {
           showDialog(
             context: context,
             builder: (BuildContext context) {
-              return CustomHourPicker(
-                onPositivePressed: (context, time) {
-                  textFieldController.text = time.toString();
-                  print(time);
-                },
-                onNegativePressed: (context) {
-                  print('cancel');
-                },
-              );
+              return buildCustomTimer(context);
             },
           );
         },
