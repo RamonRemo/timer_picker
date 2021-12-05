@@ -12,6 +12,10 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^1.0.2
 
+dependency_overrides:
+  time_pickerr:
+      path: '../time_pickerr'
+
 dev_dependencies:
   numberpicker: ^2.1.1
   flutter_test:

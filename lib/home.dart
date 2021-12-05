@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:time_picker/time_picker.dart';
+import 'package:time_pickerr/time_picker.dart';
+
 
 class Home extends StatefulWidget {
   const Home({
@@ -25,11 +26,6 @@ class _HomeState extends State<Home> {
   }
 
   Widget buildBody(BuildContext context) {
-    Function(TimeOfDay time) onAccept = (time) {
-      textFieldController.text = time.toString();
-      print(time);
-    };
-
     return SafeArea(
       child: Center(
         child: Column(
@@ -57,7 +53,7 @@ class _HomeState extends State<Home> {
         child: TextField(
           controller: textFieldController,
           textAlign: TextAlign.center,
-          decoration: InputDecoration(
+          decoration: const InputDecoration(
             hintText: 'DateTime',
             border: InputBorder.none,
           ),
@@ -68,22 +64,16 @@ class _HomeState extends State<Home> {
 
   buildCustomTimer(BuildContext context) {
     return CustomHourPicker(
+      elevation: 2,
       onPositivePressed: (context, time) {
         textFieldController.text = time.toString();
-        print(time);
       },
       onNegativePressed: (context) {
-        print('cancel');
       },
     );
   }
 
   Padding buildButton(BuildContext context) {
-    Function(TimeOfDay time) onAccept = (time) {
-      textFieldController.text = time.toString();
-      print(time);
-    };
-
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ElevatedButton(
