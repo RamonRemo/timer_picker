@@ -145,9 +145,9 @@ class _CustomHourPickerState extends State<CustomHourPicker> {
           bottom: 20,
         ),
         child: Text(
-          widget.negativeButtonText ?? "Ok",
+          widget.positiveButtonText ?? "Ok",
           style:
-              widget.negativeButtonStyle ?? const TextStyle(color: Colors.blue),
+              widget.positiveButtonStyle ?? const TextStyle(color: Colors.blue),
         ),
       ),
     );
@@ -167,7 +167,7 @@ class _CustomHourPickerState extends State<CustomHourPicker> {
           bottom: 20,
         ),
         child: Text(
-          widget.positiveButtonText ?? "Cancel",
+          widget.negativeButtonText ?? "Cancel",
           style:
               widget.negativeButtonStyle ?? const TextStyle(color: Colors.blue),
         ),

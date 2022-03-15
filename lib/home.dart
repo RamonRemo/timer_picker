@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:time_pickerr/time_picker.dart';
+import 'package:time_pickerr/time_pickerr.dart';
 
 
 class Home extends StatefulWidget {
